@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
         const hbsObject ={
             burgers: data
         };
-        // console.log(hbsObject);
+        console.log(hbsObject);
         res.render("index", hbsObject )
     })
 });
@@ -22,10 +22,10 @@ router.post("/api/burgers", (req, res) => {
 
 router.put("/api/burgers/:id", (req, res) => {
     console.log(req.params.id)
-    // const condition = `id = ${req.params.id}`;
+    const condition = `${req.params.id}`;
         // UPDATE burgers SET devoured = true WHERE id = 2
 
-    burger.updateOne("burgers", "devoured", req.body.devoured, tableColTwo, condition, (data)=> {
+    burger.updateOne("burgers", "devoured", req.body.devoured, "id", condition, (data)=> {
         console.log(data);
         res.json({id: data.insertId})
 

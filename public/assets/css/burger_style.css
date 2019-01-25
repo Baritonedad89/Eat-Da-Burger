@@ -38,6 +38,14 @@ body {
        border-bottom: 2px solid black !important; 
    }
 
+   .eaten-burger {
+       opacity: 0.4;
+   }
+
+   .burger-names-eaten {
+       opacity:0.4;
+   }
+
 
 
    

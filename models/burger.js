@@ -14,7 +14,7 @@ const burger = {
           cb(res);
         });
       },
-      updateOne: (tableCol, value, tableColTwo, condition, cb)=>{
+      updateOne: (tableName, tableCol, value, tableColTwo, condition, cb)=>{
         orm.updateOne("burgers", tableCol, value, tableColTwo, condition, (res) =>{
           cb(res);
         })

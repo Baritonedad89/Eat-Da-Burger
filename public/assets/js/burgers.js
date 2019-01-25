@@ -1,23 +1,29 @@
-$(function () {
-$(".change-devoured").on('click', ()=> {
-    const id = $(this).data("id");
+$(document).ready(function() {
     
-    // const isDevoured = $(this).data("devoured");
-    // isDevoured = true;
 
-    const isDevoured = {
-        devoured: true
-      };
+    $(".change-devoured").on('click', function(event) {
+    const id = $(this).data("id");
+    const isDevoured = $(this).data('devoured');
 
+    var nowEaten = {
+      devoured: 1
+    };
+    
+    $('.burger-names').each(function () {
+        if($(this).data('id') == 'true') {
+            $(this).addClass('burger-names-eaten')
+        }
+    })
+   
 
 // Send the PUT request.
 $.ajax(`/api/burgers/${id}`, {
     type: "PUT",
-    data: isDevoured
+    data: nowEaten
   }).then(
     function() {
-        console.log(data)
-    //   console.log("changed sleep to", newSleep);
+        
+        // console.log(data)
       // Reload the page to get the updated list
       location.reload();
     }
