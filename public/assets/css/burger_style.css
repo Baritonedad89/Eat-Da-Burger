@@ -1,0 +1,43 @@
+.burger-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+body {
+    /* background-image: url("/assets/img/background-boards-brown-518245.jpg");
+    background-size: cover; */
+    background: orange;
+}
+
+.burger-names {
+    padding: 10px;
+    background: white;
+    color:black;
+    font-weight: bold;
+};
+
+/* label focus color */
+.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: black !important;
+   }
+
+/* label underline focus color */
+   .input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 3px solid black !important;
+    box-shadow: 0 1px 0 0 black !important;
+   }
+
+
+   .input-field>label {
+       color: black !important;
+   };
+
+   #textarea1 {
+       border-bottom: 2px solid black !important; 
+   }
+
+
+
+   
