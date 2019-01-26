@@ -25,8 +25,6 @@ const orm = {
     },
     updateOne: (tableName, tableCol, value, tableColTwo, condition, cb) => {
         const query = 'UPDATE ?? SET ?? = ? WHERE ?? = ?';
-        // UPDATE burgers SET devoured = true WHERE id = 2
-        console.log(query);
         connection.query(query, [tableName, tableCol, value, tableColTwo, condition],
             (err, result) => {
                 if (err) {

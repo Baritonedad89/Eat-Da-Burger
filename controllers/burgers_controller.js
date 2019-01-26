@@ -17,6 +17,8 @@ router.post("/api/burgers", (req, res) => {
     burger.insertOne("burger_name", req.body.name, (data) => {
         console.log(data);
     res.json({id: data.insertId});
+    res.status(200).end();
+
     });
 });
 
@@ -26,26 +28,16 @@ router.put("/api/burgers/:id", (req, res) => {
         // UPDATE burgers SET devoured = true WHERE id = 2
 
     burger.updateOne("burgers", "devoured", req.body.devoured, "id", condition, (data)=> {
-        console.log(data);
-        res.json({id: data.insertId})
-
-    })
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        if (data.changedRows == 0) {
+            // If no rows were changed, then the ID must not exist, so 404
+            return res.status(404).end();
+          } else {
+            console.log(data);
+            res.json({id: data.insertId})
+            res.status(200).end();
+          };
+    });
+});
 
 // Export routes for server.js to use.
 module.exports = router;
