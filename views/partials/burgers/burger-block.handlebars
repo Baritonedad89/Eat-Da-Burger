@@ -1,10 +1,11 @@
 
-<span class="burger-names" data-devoured="{{devoured}}">{{id}}. {{burger_name}}</span>
+{{!-- <span class="burger-names" data-devoured="{{devoured}}">{{id}}. {{burger_name}}</span> --}}
 
 
-{{#if devoured}}<a class=" btn-small eaten-burger" data-id="{{id}}" data-devoured="{{devoured}}">
+{{#if devoured}}<span class="burger-names burger-names-eaten" data-devoured="{{devoured}}">{{id}}. {{burger_name}}</span><a class="btn-small eaten-burger disabled" data-id="{{id}}" data-devoured="{{devoured}}">
     <i class="material-icons left"></i>Eaten</a>
-    {{else}}<a class="waves-effect waves-light btn-small change-devoured" data-id="{{id}}" data-devoured="{{devoured}}">
+    {{else}}<span class="burger-names" data-devoured="{{devoured}}">{{id}}. {{burger_name}}</span>
+<a class="waves-effect waves-light btn-small change-devoured" data-id="{{id}}" data-devoured="{{devoured}}">
     <i class="material-icons left">fastfood</i>Devour it!</a>
     {{/if}}
 

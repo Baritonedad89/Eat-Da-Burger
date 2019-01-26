@@ -9,11 +9,7 @@ $(document).ready(function() {
       devoured: 1
     };
     
-    $('.burger-names').each(function () {
-        if($(this).data('id') == 'true') {
-            $(this).addClass('burger-names-eaten')
-        }
-    })
+    
    
 
 // Send the PUT request.
